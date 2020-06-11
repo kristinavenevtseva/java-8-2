@@ -21,7 +21,7 @@ class RadioTest {
     public void shouldCurrentNumberStationReturnToMin() {
         radio.setCurrentNumberStation(9);
         radio.increaseCurrentNumberStation();
-        int expected = 0;
+        int expected = 1;
         int actual = radio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
@@ -39,7 +39,7 @@ class RadioTest {
     public void shouldCurrentNumberStationReturnToMax() {
         radio.setCurrentNumberStation(0);
         radio.decreaseCurrentNumberStation();
-        int expected = 9;
+        int expected = 8;
         int actual = radio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
@@ -77,6 +77,14 @@ class RadioTest {
         radio.decreaseCurrentVolume();
         int expected = 0;
         int actual = radio.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetCurrentNumberStation() {
+        radio.setCurrentNumberStation(5);
+        int expected = 5;
+        int actual = radio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
 }

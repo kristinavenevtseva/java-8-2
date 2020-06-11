@@ -12,7 +12,6 @@ public class Radio {
     public void increaseCurrentNumberStation() {
         if (currentNumberStation >= maxNumberStation) {
             currentNumberStation = minNumberStation;
-            return;
         }
         currentNumberStation++;
     }
@@ -20,7 +19,6 @@ public class Radio {
     public void decreaseCurrentNumberStation() {
         if (currentNumberStation <= minNumberStation) {
             currentNumberStation = maxNumberStation;
-            return;
         }
         currentNumberStation--;
     }
@@ -41,6 +39,8 @@ public class Radio {
 
     public void setCurrentNumberStation(int currentNumberStation) {
         this.currentNumberStation = currentNumberStation;
+        int[] stations = {0,1,2,3,4,5,6,7,8,9} ;
+            System.out.println(stations[0]);
     }
 
     public int getCurrentNumberStation() {
@@ -48,10 +48,12 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
+
         this.currentVolume = currentVolume;
     }
 
     public int getCurrentVolume() {
+
         return currentVolume;
     }
 }
