@@ -10,14 +10,14 @@ public class Radio {
     private int minVolume = 0;
 
     public void increaseCurrentNumberStation() {
-        if (currentNumberStation >= maxNumberStation) {
+        if (currentNumberStation == maxNumberStation) {
             currentNumberStation = minNumberStation;
         }
         currentNumberStation++;
     }
 
     public void decreaseCurrentNumberStation() {
-        if (currentNumberStation <= minNumberStation) {
+        if (currentNumberStation == minNumberStation) {
             currentNumberStation = maxNumberStation;
         }
         currentNumberStation--;
@@ -38,9 +38,16 @@ public class Radio {
     }
 
     public void setCurrentNumberStation(int currentNumberStation) {
+
+        if (currentNumberStation > maxNumberStation) {
+            return;
+        }
+
+        if (currentNumberStation < minNumberStation) {
+            return;
+        }
+
         this.currentNumberStation = currentNumberStation;
-        int[] stations = {0,1,2,3,4,5,6,7,8,9} ;
-            System.out.println(stations[0]);
     }
 
     public int getCurrentNumberStation() {

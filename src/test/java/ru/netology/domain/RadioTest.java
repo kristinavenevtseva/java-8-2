@@ -87,4 +87,20 @@ class RadioTest {
         int actual = radio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldGetCurrentNumberStationOverMax() {
+        radio.setCurrentNumberStation(11);
+        int expected = 0;
+        int actual = radio.getCurrentNumberStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetCurrentNumberStationBelowMin() {
+        radio.setCurrentNumberStation(-2);
+        int expected = 0;
+        int actual = radio.getCurrentNumberStation();
+        assertEquals(expected, actual);
+    }
 }
