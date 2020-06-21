@@ -41,7 +41,7 @@ class RadioTest {
 
         radio.increaseCurrentNumberStation();
 
-        assertEquals(1, radio.getCurrentNumberStation());
+        assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
@@ -59,7 +59,7 @@ class RadioTest {
 
         radio.decreaseCurrentNumberStation();
 
-        assertEquals(9, radio.getCurrentNumberStation());
+        assertEquals(10, radio.getCurrentNumberStation());
     }
 
     @Test
