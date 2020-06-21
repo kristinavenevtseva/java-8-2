@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Radio {
 
     private int currentNumberStation = 6;
@@ -24,6 +23,7 @@ public class Radio {
     public void increaseCurrentNumberStation() {
         if (currentNumberStation == maxNumberStation) {
             currentNumberStation = minNumberStation;
+            return;
         }
         currentNumberStation++;
     }
@@ -31,6 +31,7 @@ public class Radio {
     public void decreaseCurrentNumberStation() {
         if (currentNumberStation == minNumberStation) {
             currentNumberStation = maxNumberStation;
+            return;
         }
         currentNumberStation--;
     }
